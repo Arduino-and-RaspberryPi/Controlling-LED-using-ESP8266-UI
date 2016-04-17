@@ -24,27 +24,31 @@ else if ($light == "off") {
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js"></script>
     <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
-
+    <script src="light.js" type="text/javascript"></script>
   </head>
   <body>
     <div class="row" style="margin-top: 20px;">
       <div class="col-md-8 col-md-offset-2">
-        <a href="?light=on" class="btn btn-success btn-block btn-lg">Turn On</a>
+        <a id="light_on" href="?light=on" class="btn btn-success btn-block btn-lg">Turn On</a>
         <br />
-        <a href="?light=off" class="led btn btn-danger btn-block btn-lg">Turn Off</a>
+        <a id="light_off" href="?light=off" class="led btn btn-danger btn-block btn-lg">Turn Off</a>
         <br />
         <div class="light-status well" style="margin-top: 5px; text-align:center">
           <?php
             if($light=="on") {
-              echo("Turn LED on.");
+              echo("Turn light on.");
             }
             else if ($light=="off") {
-              echo("Turn LED off.");
+              echo("Turn light off.");
             }
             else {
               echo ("Do something.");
             }
           ?>
+        </div>
+        <div class="light-status well" style="margin-top: 5px; text-align:center;">
+           <img id="light_img_on" src="images/on.png" style="height:200px;">
+           <img id="light_img_off" src="images/off.png" style="height:200px;">
         </div>
       </div>
     </div>
